@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/white.png-2f6fec626ebeba2e7800b05fa75761ef.stex"
+path="res://.import/PressStart.png-d7b401abd02e5fa06b8268ef8528fa7f.stex"
 
 [deps]
 
-source_file="res://UI/white.png"
-dest_files=[ "res://.import/white.png-2f6fec626ebeba2e7800b05fa75761ef.stex" ]
+source_file="res://UI/MainMenu/PressStart.png"
+dest_files=[ "res://.import/PressStart.png-d7b401abd02e5fa06b8268ef8528fa7f.stex" ]
 
 [params]
 
@@ -17,7 +17,7 @@ compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=true
+flags/filter=false
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2
@@ -27,5 +27,5 @@ process/HDR_as_SRGB=false
 process/invert_color=false
 stream=false
 size_limit=0
-detect_3d=true
+detect_3d=false
 svg/scale=1.0
