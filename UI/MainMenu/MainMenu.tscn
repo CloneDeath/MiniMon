@@ -1,9 +1,18 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://UI/MainMenu/MainMenu.gd" type="Script" id=1]
 [ext_resource path="res://UI/MainMenu/MiniMon_Logo.png" type="Texture" id=2]
 [ext_resource path="res://UI/MainMenu/PressStart.png" type="Texture" id=3]
 [ext_resource path="res://UI/MainMenu/StartPressed.ogg" type="AudioStream" id=4]
+[ext_resource path="res://Player/Burnizard/Burnizard.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Player/Burnmander/Burnmander.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Player/Burnmeleon/Burnmeleon.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Player/Burstoise/Burstoise.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Player/Plantasaur/Plantasaur.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Player/Spraytle/Spraytle.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Player/Stemasaur/Stemasaur.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Player/Vineasaur/Vineasaur.tscn" type="PackedScene" id=12]
+[ext_resource path="res://Player/Warspraytle/Warspraytle.tscn" type="PackedScene" id=13]
 
 [sub_resource type="Animation" id=1]
 
@@ -29,6 +38,7 @@ position = Vector2( 57, 20 )
 texture = ExtResource( 2 )
 
 [node name="PressStart" type="Sprite" parent="."]
+visible = false
 position = Vector2( 90.0957, 55.6915 )
 texture = ExtResource( 3 )
 
@@ -37,4 +47,31 @@ texture = ExtResource( 3 )
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 4 )
+
+[node name="Burnizard" parent="." instance=ExtResource( 5 )]
+position = Vector2( 9.79017, 44.0558 )
+
+[node name="Burnmander" parent="." instance=ExtResource( 6 )]
+position = Vector2( 91.6081, 58.3914 )
+
+[node name="Burnmeleon" parent="." instance=ExtResource( 7 )]
+position = Vector2( 39.86, 49.9998 )
+
+[node name="Burstoise" parent="." instance=ExtResource( 8 )]
+position = Vector2( 69.5802, 51.2236 )
+
+[node name="Plantasaur" parent="." instance=ExtResource( 9 )]
+position = Vector2( 24.6503, 59.4403 )
+
+[node name="Spraytle" parent="." instance=ExtResource( 10 )]
+position = Vector2( 99.4752, 45.9789 )
+
+[node name="Stemasaur" parent="." instance=ExtResource( 11 )]
+position = Vector2( 39.86, 36.888 )
+
+[node name="Vineasaur" parent="." instance=ExtResource( 12 )]
+position = Vector2( 59.6152, 62.2375 )
+
+[node name="Warspraytle" parent="." instance=ExtResource( 13 )]
+position = Vector2( 64.1606, 35.1397 )
 
