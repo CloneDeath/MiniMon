@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Dirt.png-24eb9b35efe2bf62a03129378a11a56a.stex"
+path="res://.import/MiniMon_Logo.png-658a117b550183ffff1d6b22fd74c21e.stex"
 
 [deps]
 
-source_file="res://Levels/Terrain/Dirt/Dirt.png"
-dest_files=[ "res://.import/Dirt.png-24eb9b35efe2bf62a03129378a11a56a.stex" ]
+source_file="res://UI/MiniMon_Logo.png"
+dest_files=[ "res://.import/MiniMon_Logo.png-658a117b550183ffff1d6b22fd74c21e.stex" ]
 
 [params]
 
