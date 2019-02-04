@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://UI/MainMenu/MainMenu.gd" type="Script" id=1]
 [ext_resource path="res://UI/MainMenu/MiniMon_Logo.png" type="Texture" id=2]
 [ext_resource path="res://UI/MainMenu/PressStart.png" type="Texture" id=3]
 [ext_resource path="res://UI/MainMenu/StartPressed.ogg" type="AudioStream" id=4]
+[ext_resource path="res://UI/MainMenu/MenuTheme.ogg" type="AudioStream" id=5]
 
 [sub_resource type="Animation" id=1]
 
@@ -19,6 +20,20 @@ tracks/0/keys = {
 "transitions": PoolRealArray( 1, 1, 1, 1 ),
 "update": 1,
 "values": [ false, true, false, true ]
+}
+tracks/1/type = "method"
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 1 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "go_to_selection"
+} ]
 }
 
 [node name="MainMenu" type="Node2D"]
@@ -37,4 +52,7 @@ texture = ExtResource( 3 )
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 4 )
+
+[node name="MenuTheme" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 5 )
 
