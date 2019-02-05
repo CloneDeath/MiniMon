@@ -1,0 +1,40 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Levels/Enemies/Parkbat/Parkbat.png" type="Texture" id=1]
+
+[sub_resource type="RectangleShape2D" id=1]
+
+extents = Vector2( 4, 3 )
+
+[sub_resource type="Animation" id=2]
+
+resource_name = "idle"
+length = 0.4
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Parkbat:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3 ]
+}
+
+[node name="Parkbat" type="KinematicBody2D"]
+
+[node name="Parkbat" type="Sprite" parent="."]
+texture = ExtResource( 1 )
+hframes = 4
+frame = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource( 1 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "idle"
+anims/idle = SubResource( 2 )
+

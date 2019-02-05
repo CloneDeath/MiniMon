@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Parkbat.png-9b92a8c304bb25e751e529c4a034603a.stex"
+path="res://.import/Squirt.png-b83c2f2022f2740ea938108fe9ce33af.stex"
 
 [deps]
 
-source_file="res://Levels/Enemies/Parkbat/Parkbat.png"
-dest_files=[ "res://.import/Parkbat.png-9b92a8c304bb25e751e529c4a034603a.stex" ]
+source_file="res://Player/Projectiles/Squirt.png"
+dest_files=[ "res://.import/Squirt.png-b83c2f2022f2740ea938108fe9ce33af.stex" ]
 
 [params]
 
@@ -17,7 +17,7 @@ compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=false
+flags/filter=true
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2
@@ -27,5 +27,5 @@ process/HDR_as_SRGB=false
 process/invert_color=false
 stream=false
 size_limit=0
-detect_3d=false
+detect_3d=true
 svg/scale=1.0
