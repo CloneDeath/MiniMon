@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Dancingflame.png-e560166a4025acc58db1f00740506277.stex"
+path="res://.import/Dancingflame.png-136d812056e5cd37956e5b117f9cfb60.stex"
 
 [deps]
 
-source_file="res://Player/Projectiles/Dancingflame.png"
-dest_files=[ "res://.import/Dancingflame.png-e560166a4025acc58db1f00740506277.stex" ]
+source_file="res://Player/Projectiles/Dancingflame/Dancingflame.png"
+dest_files=[ "res://.import/Dancingflame.png-136d812056e5cd37956e5b117f9cfb60.stex" ]
 
 [params]
 
@@ -17,7 +17,7 @@ compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=true
+flags/filter=false
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2
@@ -27,5 +27,5 @@ process/HDR_as_SRGB=false
 process/invert_color=false
 stream=false
 size_limit=0
-detect_3d=true
+detect_3d=false
 svg/scale=1.0

@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Sharpleaf.png-f56119a800c64c64bd17277df7bba5ec.stex"
+path="res://.import/Sharpleaf.png-97ff8236b10496b0ae8f54c740f41406.stex"
 
 [deps]
 
-source_file="res://Player/Projectiles/Sharpleaf.png"
-dest_files=[ "res://.import/Sharpleaf.png-f56119a800c64c64bd17277df7bba5ec.stex" ]
+source_file="res://Player/Projectiles/Sharpleaf/Sharpleaf.png"
+dest_files=[ "res://.import/Sharpleaf.png-97ff8236b10496b0ae8f54c740f41406.stex" ]
 
 [params]
 
@@ -17,7 +17,7 @@ compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=true
+flags/filter=false
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2
@@ -27,5 +27,5 @@ process/HDR_as_SRGB=false
 process/invert_color=false
 stream=false
 size_limit=0
-detect_3d=true
+detect_3d=false
 svg/scale=1.0

@@ -1,5 +1,6 @@
 extends KinematicBody2D
 
+export(PackedScene) var Projectile;
 export var Speed = 16;
 export var JumpHeight = 75;
 var gravity = 128;
@@ -11,6 +12,13 @@ func _process(_delta):
 	var target_animation = action + "_" + facing;
 	if ($Animation.current_animation != target_animation):
 		$Animation.play(target_animation);
+
+	var ATTACK = Input.is_action_just_pressed("attack");
+	if (self.is_on_floor() && ATTACK && Projectile != null):
+		var bullet = Projectile.instance();
+		bullet.facing = 1 if self.facing == "right" else -1;
+		self.get_parent().add_child(bullet);
+		bullet.global_position = self.global_position;
 
 func _physics_process(delta):
 	var LEFT = Input.is_action_pressed("move_left");

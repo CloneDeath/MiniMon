@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Squirt.png-b83c2f2022f2740ea938108fe9ce33af.stex"
+path="res://.import/Squirt.png-b16b06659c72b72c5468f877828b86df.stex"
 
 [deps]
 
-source_file="res://Player/Projectiles/Squirt.png"
-dest_files=[ "res://.import/Squirt.png-b83c2f2022f2740ea938108fe9ce33af.stex" ]
+source_file="res://Player/Projectiles/Squirt/Squirt.png"
+dest_files=[ "res://.import/Squirt.png-b16b06659c72b72c5468f877828b86df.stex" ]
 
 [params]
 
@@ -17,7 +17,7 @@ compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=true
+flags/filter=false
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2
@@ -27,5 +27,5 @@ process/HDR_as_SRGB=false
 process/invert_color=false
 stream=false
 size_limit=0
-detect_3d=true
+detect_3d=false
 svg/scale=1.0
