@@ -1,8 +1,8 @@
 extends KinematicBody2D
 
-export var Speed = 8;
-
-var gravity = 8;
+export var Speed = 16;
+export var JumpHeight = 75;
+var gravity = 128;
 var velocity = Vector2(0, 0);
 var facing = "right";
 var action = "idle";
@@ -20,7 +20,7 @@ func _physics_process(delta):
 	var JUMP = Input.is_action_pressed("jump");
 	velocity.x = (int(RIGHT)-int(LEFT)) * Speed;
 	if (is_on_floor() && JUMP):
-		velocity.y = -12;
+		velocity.y = -JumpHeight;
 	velocity.y += gravity * delta;
 	velocity = self.move_and_slide(velocity, Vector2(0, -1));
 

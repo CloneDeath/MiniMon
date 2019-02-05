@@ -4,7 +4,7 @@
 
 [node name="BaseLevel" type="TileMap"]
 tile_set = ExtResource( 1 )
-cell_size = Vector2( 8, 8 )
+cell_size = Vector2( 6, 6 )
 format = 1
 
 [node name="LevelSpawn" type="Position2D" parent="."]
