@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Warspraytle.png-1c2c89a9f99bf9be8fcdedfb45a85fc2.stex"
+path="res://.import/Spraytle.png-fac3371b5e600385cd81129155d5951f.stex"
 
 [deps]
 
-source_file="res://Player/Warspraytle/Warspraytle.png"
-dest_files=[ "res://.import/Warspraytle.png-1c2c89a9f99bf9be8fcdedfb45a85fc2.stex" ]
+source_file="res://Player/MiniMon/Spraytle/Spraytle.png"
+dest_files=[ "res://.import/Spraytle.png-fac3371b5e600385cd81129155d5951f.stex" ]
 
 [params]
 

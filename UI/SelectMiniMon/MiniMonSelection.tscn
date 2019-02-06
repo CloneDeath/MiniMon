@@ -1,8 +1,9 @@
 [gd_scene load_steps=7 format=2]
 
-[ext_resource path="res://Player/Spraytle/Spraytle.png" type="Texture" id=1]
+[ext_resource path="res://Player/MiniMon/Spraytle/Spraytle.png" type="Texture" id=1]
 [ext_resource path="res://UI/SelectMiniMon/MiniMonSelection.gd" type="Script" id=2]
 [ext_resource path="res://NeekoFont.ttf" type="DynamicFontData" id=3]
+
 
 [sub_resource type="Animation" id=1]
 

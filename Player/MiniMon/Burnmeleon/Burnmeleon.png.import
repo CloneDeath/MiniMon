@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Burnmander.png-61d0e652b2d65c9952d579c1c3da1bc9.stex"
+path="res://.import/Burnmeleon.png-79e1be6506769671c5c7651469a2779e.stex"
 
 [deps]
 
-source_file="res://Player/Burnmander/Burnmander.png"
-dest_files=[ "res://.import/Burnmander.png-61d0e652b2d65c9952d579c1c3da1bc9.stex" ]
+source_file="res://Player/MiniMon/Burnmeleon/Burnmeleon.png"
+dest_files=[ "res://.import/Burnmeleon.png-79e1be6506769671c5c7651469a2779e.stex" ]
 
 [params]
 

@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Burnmeleon.png-da447965be95039fc874c13f9f15e42e.stex"
+path="res://.import/Vineasaur.png-41a790d07c1e0ca310f81e9f43dffcfe.stex"
 
 [deps]
 
-source_file="res://Player/Burnmeleon/Burnmeleon.png"
-dest_files=[ "res://.import/Burnmeleon.png-da447965be95039fc874c13f9f15e42e.stex" ]
+source_file="res://Player/MiniMon/Vineasaur/Vineasaur.png"
+dest_files=[ "res://.import/Vineasaur.png-41a790d07c1e0ca310f81e9f43dffcfe.stex" ]
 
 [params]
 

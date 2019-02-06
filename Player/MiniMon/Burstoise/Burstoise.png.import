@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Burstoise.png-91b54bfd2da17fd85e089a0b000beb56.stex"
+path="res://.import/Burstoise.png-739df16d1599f194de318357483aede8.stex"
 
 [deps]
 
-source_file="res://Player/Burstoise/Burstoise.png"
-dest_files=[ "res://.import/Burstoise.png-91b54bfd2da17fd85e089a0b000beb56.stex" ]
+source_file="res://Player/MiniMon/Burstoise/Burstoise.png"
+dest_files=[ "res://.import/Burstoise.png-739df16d1599f194de318357483aede8.stex" ]
 
 [params]
 

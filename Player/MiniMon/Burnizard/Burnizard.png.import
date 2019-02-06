@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/logo.png-5f6d620d49a33b7800c8660913f89489.stex"
+path="res://.import/Burnizard.png-5f93489a55125604af19f85c79c40318.stex"
 
 [deps]
 
-source_file="res://Player/Plantasaur/logo.png"
-dest_files=[ "res://.import/logo.png-5f6d620d49a33b7800c8660913f89489.stex" ]
+source_file="res://Player/MiniMon/Burnizard/Burnizard.png"
+dest_files=[ "res://.import/Burnizard.png-5f93489a55125604af19f85c79c40318.stex" ]
 
 [params]
 
@@ -17,7 +17,7 @@ compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=true
+flags/filter=false
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2
@@ -27,5 +27,5 @@ process/HDR_as_SRGB=false
 process/invert_color=false
 stream=false
 size_limit=0
-detect_3d=true
+detect_3d=false
 svg/scale=1.0

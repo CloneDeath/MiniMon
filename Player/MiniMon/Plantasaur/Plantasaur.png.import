@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Stemasaur.png-93f707db80c5d5c6e5b2865f33bb8f91.stex"
+path="res://.import/Plantasaur.png-9c8aada2e48597e837fe3d3b893d21c0.stex"
 
 [deps]
 
-source_file="res://Player/Stemasaur/Stemasaur.png"
-dest_files=[ "res://.import/Stemasaur.png-93f707db80c5d5c6e5b2865f33bb8f91.stex" ]
+source_file="res://Player/MiniMon/Plantasaur/Plantasaur.png"
+dest_files=[ "res://.import/Plantasaur.png-9c8aada2e48597e837fe3d3b893d21c0.stex" ]
 
 [params]
 

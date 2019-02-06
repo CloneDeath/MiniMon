@@ -2,11 +2,14 @@
 
 [ext_resource path="res://UI/SelectMiniMon/SelectMiniMon.gd" type="Script" id=1]
 [ext_resource path="res://UI/SelectMiniMon/MiniMonSelection.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Player/Spraytle/Spraytle.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Player/Burnmander/Burnmander.png" type="Texture" id=4]
-[ext_resource path="res://Player/Burnmander/Burnmander.tscn" type="PackedScene" id=5]
-[ext_resource path="res://Player/Plantasaur/Plantasaur.png" type="Texture" id=6]
-[ext_resource path="res://Player/Plantasaur/Plantasaur.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Player/MiniMon/Spraytle/Spraytle.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Player/MiniMon/Burnmander/Burnmander.png" type="Texture" id=4]
+[ext_resource path="res://Player/MiniMon/Burnmander/Burnmander.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Player/MiniMon/Plantasaur/Plantasaur.png" type="Texture" id=6]
+[ext_resource path="res://Player/MiniMon/Plantasaur/Plantasaur.tscn" type="PackedScene" id=7]
+
+
+
 
 [sub_resource type="Animation" id=1]
 

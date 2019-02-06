@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Vineasaur.png-ddeaa8cdb85558ade55a648d4660368e.stex"
+path="res://.import/logo.png-ed7a4a09039a1072ebc3ce566441d922.stex"
 
 [deps]
 
-source_file="res://Player/Vineasaur/Vineasaur.png"
-dest_files=[ "res://.import/Vineasaur.png-ddeaa8cdb85558ade55a648d4660368e.stex" ]
+source_file="res://Player/MiniMon/Plantasaur/logo.png"
+dest_files=[ "res://.import/logo.png-ed7a4a09039a1072ebc3ce566441d922.stex" ]
 
 [params]
 
@@ -17,7 +17,7 @@ compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=false
+flags/filter=true
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2
@@ -27,5 +27,5 @@ process/HDR_as_SRGB=false
 process/invert_color=false
 stream=false
 size_limit=0
-detect_3d=false
+detect_3d=true
 svg/scale=1.0

@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Burnizard.png-5867c429d7de9254a141b2e9ac2b2e08.stex"
+path="res://.import/Burnmander.png-cb035512af6d7ba3f915826118b479dc.stex"
 
 [deps]
 
-source_file="res://Player/Burnizard/Burnizard.png"
-dest_files=[ "res://.import/Burnizard.png-5867c429d7de9254a141b2e9ac2b2e08.stex" ]
+source_file="res://Player/MiniMon/Burnmander/Burnmander.png"
+dest_files=[ "res://.import/Burnmander.png-cb035512af6d7ba3f915826118b479dc.stex" ]
 
 [params]
 

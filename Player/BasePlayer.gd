@@ -21,6 +21,11 @@ func _process(_delta):
 		self.get_parent().add_child(bullet);
 		bullet.global_position = $Sprite/ProjectileSource.global_position;
 
+	for i in range(get_slide_count()):
+		var col = get_slide_collision(i);
+		if (col.collider.is_in_group("enemy")):
+			take_damage(col.collider);
+
 func _physics_process(delta):
 	var LEFT = Input.is_action_pressed("move_left");
 	var RIGHT = Input.is_action_pressed("move_right");
@@ -47,3 +52,6 @@ func _physics_process(delta):
 	else:
 		action = "idle";
 
+func take_damage(other):
+	$DamageAnimation.play("take damage");
+	self.velocity.y = -20;
