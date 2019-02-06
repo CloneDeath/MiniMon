@@ -14,11 +14,12 @@ func _process(_delta):
 		$Animation.play(target_animation);
 
 	var ATTACK = Input.is_action_just_pressed("attack");
-	if (self.is_on_floor() && ATTACK && Projectile != null):
+	if (ATTACK && Projectile != null):
 		var bullet = Projectile.instance();
 		bullet.facing = 1 if self.facing == "right" else -1;
+		bullet.source = self;
 		self.get_parent().add_child(bullet);
-		bullet.global_position = self.global_position;
+		bullet.global_position = $Sprite/ProjectileSource.global_position;
 
 func _physics_process(delta):
 	var LEFT = Input.is_action_pressed("move_left");

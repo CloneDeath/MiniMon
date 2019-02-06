@@ -7,7 +7,7 @@
 
 extents = Vector2( 4, 2 )
 
-[sub_resource type="Animation" id=6]
+[sub_resource type="Animation" id=2]
 
 resource_name = "idle_left"
 loop = true
@@ -64,7 +64,7 @@ tracks/1/keys = {
 "values": [ 0, 1 ]
 }
 
-[sub_resource type="Animation" id=10]
+[sub_resource type="Animation" id=4]
 
 resource_name = "jump_down_left"
 loop = true
@@ -93,7 +93,7 @@ tracks/1/keys = {
 "values": [ 7 ]
 }
 
-[sub_resource type="Animation" id=11]
+[sub_resource type="Animation" id=5]
 
 resource_name = "jump_down_right"
 loop = true
@@ -122,7 +122,7 @@ tracks/1/keys = {
 "values": [ 7 ]
 }
 
-[sub_resource type="Animation" id=7]
+[sub_resource type="Animation" id=6]
 
 resource_name = "jump_up_left"
 loop = true
@@ -151,7 +151,7 @@ tracks/1/keys = {
 "values": [ 6 ]
 }
 
-[sub_resource type="Animation" id=8]
+[sub_resource type="Animation" id=7]
 
 resource_name = "jump_up_right"
 loop = true
@@ -180,7 +180,7 @@ tracks/1/keys = {
 "values": [ 6 ]
 }
 
-[sub_resource type="Animation" id=9]
+[sub_resource type="Animation" id=8]
 
 resource_name = "walk_left"
 length = 0.8
@@ -210,7 +210,7 @@ tracks/1/keys = {
 "values": [ 2, 3, 4, 5, 2 ]
 }
 
-[sub_resource type="Animation" id=5]
+[sub_resource type="Animation" id=9]
 
 length = 0.8
 loop = true
@@ -240,6 +240,8 @@ tracks/1/keys = {
 }
 
 [node name="BasePlayer" type="KinematicBody2D"]
+collision_layer = 8
+collision_mask = 5
 collision/safe_margin = 0.01
 script = ExtResource( 1 )
 
@@ -249,17 +251,20 @@ texture = ExtResource( 2 )
 hframes = 15
 frame = 7
 
+[node name="ProjectileSource" type="Position2D" parent="Sprite"]
+position = Vector2( 4.16657, 0.272012 )
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 0, -2 )
 shape = SubResource( 1 )
 
 [node name="Animation" type="AnimationPlayer" parent="."]
-anims/idle_left = SubResource( 6 )
+anims/idle_left = SubResource( 2 )
 anims/idle_right = SubResource( 3 )
-anims/jump_down_left = SubResource( 10 )
-anims/jump_down_right = SubResource( 11 )
-anims/jump_up_left = SubResource( 7 )
-anims/jump_up_right = SubResource( 8 )
-anims/walk_left = SubResource( 9 )
-anims/walk_right = SubResource( 5 )
+anims/jump_down_left = SubResource( 4 )
+anims/jump_down_right = SubResource( 5 )
+anims/jump_up_left = SubResource( 6 )
+anims/jump_up_right = SubResource( 7 )
+anims/walk_left = SubResource( 8 )
+anims/walk_right = SubResource( 9 )
 

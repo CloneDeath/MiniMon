@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Hurt.ogg-6b12c0865d288779d7d39c7fdfbc9a36.oggstr"
+
+[deps]
+
+source_file="res://Levels/Enemies/Rhinodon/Hurt.ogg"
+dest_files=[ "res://.import/Hurt.ogg-6b12c0865d288779d7d39c7fdfbc9a36.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0
