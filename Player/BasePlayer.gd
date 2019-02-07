@@ -1,18 +1,22 @@
 extends KinematicBody2D
 
 export(PackedScene) var Projectile;
-export var Speed = 16;
+export var Speed = 20;
 export var JumpHeight = 75;
 var gravity = 128;
 var velocity = Vector2(0, 0);
 var facing = "right";
 var action = "idle";
 
-func _process(_delta):
-	var target_animation = action + "_" + facing;
-	if ($Animation.current_animation != target_animation):
-		$Animation.play(target_animation);
+func _physics_process(delta):
+	execute_velocity_update(delta);
+	velocity = self.move_and_slide(velocity, Vector2(0, -1));
+	execute_animation_update();
+	execute_collision_triggers();
+	execute_attack_update();
+	execute_animation_update();
 
+func execute_attack_update():
 	var ATTACK = Input.is_action_just_pressed("attack");
 	if (ATTACK && Projectile != null):
 		var bullet = Projectile.instance();
@@ -21,12 +25,7 @@ func _process(_delta):
 		self.get_parent().add_child(bullet);
 		bullet.global_position = $Sprite/ProjectileSource.global_position;
 
-	for i in range(get_slide_count()):
-		var col = get_slide_collision(i);
-		if (col.collider.is_in_group("enemy")):
-			take_damage(col.collider);
-
-func _physics_process(delta):
+func execute_velocity_update(delta):
 	var LEFT = Input.is_action_pressed("move_left");
 	var RIGHT = Input.is_action_pressed("move_right");
 	var JUMP = Input.is_action_just_pressed("jump");
@@ -35,16 +34,21 @@ func _physics_process(delta):
 	if (is_on_floor() && JUMP):
 		velocity.y = -JumpHeight;
 	if (!is_on_floor() && FALL && velocity.y < 0 && velocity.y > (-JumpHeight * 0.80)):
-		velocity.y = 0;
+		velocity.y += 8 * gravity * delta;
 	velocity.y += gravity * delta;
-	velocity = self.move_and_slide(velocity, Vector2(0, -1));
 
+func execute_animation_update():
+	var LEFT = Input.is_action_pressed("move_left");
+	var RIGHT = Input.is_action_pressed("move_right");
+	var ATTACK = Input.is_action_just_pressed("attack");
 	if (LEFT && !RIGHT):
 		facing = "left";
 	elif (RIGHT && !LEFT):
 		facing = "right";
 
-	if ((LEFT != RIGHT) && !self.is_on_wall() && self.is_on_floor()):
+	if (is_attacking() || ATTACK):
+		action = "attack";
+	elif ((LEFT != RIGHT) && !self.is_on_wall() && self.is_on_floor()):
 		action = "walk";
 	elif (!self.is_on_floor()):
 		if (velocity.y < 0): action = "jump_up";
@@ -52,6 +56,19 @@ func _physics_process(delta):
 	else:
 		action = "idle";
 
-func take_damage(other):
+	var target_animation = action + "_" + facing;
+	if ($Animation.current_animation != target_animation):
+		$Animation.play(target_animation);
+
+func execute_collision_triggers():
+	for i in range(get_slide_count()):
+		var col = get_slide_collision(i);
+		if (col.collider.is_in_group("enemy")):
+			self.damage(col.collider);
+
+func damage(source):
 	$DamageAnimation.play("take damage");
 	self.velocity.y = -20;
+
+func is_attacking():
+	return $Animation.is_playing() && ($Animation.current_animation == "attack_right" || $Animation.current_animation == "attack_left");

@@ -4,16 +4,18 @@
 [ext_resource path="res://Player/Projectiles/Dancingflame/Dancingflame.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Player/MiniMon/Burnmeleon/Burnmeleon.png" type="Texture" id=3]
 
-
 [sub_resource type="RectangleShape2D" id=1]
 
 extents = Vector2( 2, 3 )
 
-[node name="Burnmeleon" index="0" instance=ExtResource( 1 )]
+[node name="Burnmeleon" instance=ExtResource( 1 )]
 Projectile = ExtResource( 2 )
 
 [node name="Sprite" parent="." index="0"]
 texture = ExtResource( 3 )
+
+[node name="ProjectileSource" parent="Sprite" index="0"]
+position = Vector2( 3.85879, -0.497438 )
 
 [node name="CollisionShape2D" parent="." index="1"]
 position = Vector2( 0, -3 )

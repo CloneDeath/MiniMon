@@ -17,6 +17,13 @@ func _physics_process(delta):
 	if (self.is_on_wall()):
 		speed *= -1;
 		velocity.y = -20;
+	execute_collision_triggers();
+
+func execute_collision_triggers():
+	for i in range(get_slide_count()):
+		var col = get_slide_collision(i);
+		if (col.collider.is_in_group("player")):
+			col.collider.damage(self);
 
 func damage(source):
 	if (sign(speed) != sign(source.facing)):
