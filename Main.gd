@@ -2,7 +2,7 @@ extends Node2D
 var current_scene: Node = null;
 
 func _ready():
-	var main_menu_scene = load("res://UI/MainMenu/MainMenu.tscn");
+	var main_menu_scene = preload("res://UI/MainMenu/MainMenu.tscn");
 	var main_menu = main_menu_scene.instance();
 	load_scene(main_menu);
 

@@ -1,5 +1,7 @@
 extends KinematicBody2D
 
+signal restart_level();
+
 export(PackedScene) var Projectile;
 export var Speed = 20;
 export var JumpHeight = 75;
@@ -92,4 +94,4 @@ func is_dead():
 	return self.CurrentHp <= 0;
 
 func restart_level():
-	pass;
+	emit_signal("restart_level");
