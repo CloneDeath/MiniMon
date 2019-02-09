@@ -6,4 +6,7 @@ export var Max = 5;
 
 func _process(_delta):
 	self.visible = HeartNumber <= Max;
-	self.frame = 0 if HeartNumber <= Current else 1;
+	if (HeartNumber <= self.Current):
+		self.frame = 0;
+	else:
+		self.frame = 1;

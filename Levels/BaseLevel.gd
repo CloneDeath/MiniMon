@@ -6,7 +6,8 @@ signal load_scene(scene);
 var player = null;
 
 func add_player(new_player):
-	get_node("LevelSpawn").add_child(new_player);
+	self.add_child(new_player);
+	new_player.position = get_node("LevelSpawn").position;
 	get_node("Camera").target = new_player;
 	player = new_player;
 	player.connect("restart_level", self, "restart_level");

@@ -83,6 +83,7 @@ func damage(_source):
 	self.CurrentHp -= 1;
 	if (self.CurrentHp <= 0):
 		$Animation.play("die_" + facing);
+		velocity.x = 0;
 	else:
 		$DamageAnimation.play("take damage");
 		self.velocity.y = -20;

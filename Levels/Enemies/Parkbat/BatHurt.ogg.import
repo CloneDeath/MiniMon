@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/BatHurt.ogg-95c9ca3a49edb9e9a25058520221de33.oggstr"
+
+[deps]
+
+source_file="res://Levels/Enemies/Parkbat/BatHurt.ogg"
+dest_files=[ "res://.import/BatHurt.ogg-95c9ca3a49edb9e9a25058520221de33.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0
