@@ -3,15 +3,15 @@ extends KinematicBody2D
 export(PackedScene) var Projectile;
 export var Speed = 20;
 export var JumpHeight = 75;
-export var MaxHp = 39;
-var hp = 39;
+export var MaxHp = 3;
+var CurrentHp = 3;
 var gravity = 128;
 var velocity = Vector2(0, 0);
 var facing = "right";
 var action = "idle";
 
 func _ready():
-	hp = MaxHp;
+	CurrentHp = MaxHp;
 
 func _physics_process(delta):
 	execute_velocity_update(delta);
@@ -22,6 +22,7 @@ func _physics_process(delta):
 	execute_animation_update();
 
 func execute_attack_update():
+	if (is_dead()): return;
 	var ATTACK = Input.is_action_just_pressed("attack");
 	if (ATTACK && Projectile != null):
 		var bullet = Projectile.instance();
@@ -31,6 +32,9 @@ func execute_attack_update():
 		bullet.global_position = $Sprite/ProjectileSource.global_position;
 
 func execute_velocity_update(delta):
+	velocity.y += gravity * delta;
+
+	if (is_dead()): return;
 	var LEFT = Input.is_action_pressed("move_left");
 	var RIGHT = Input.is_action_pressed("move_right");
 	var JUMP = Input.is_action_just_pressed("jump");
@@ -40,9 +44,9 @@ func execute_velocity_update(delta):
 		velocity.y = -JumpHeight;
 	if (!is_on_floor() && FALL && velocity.y < 0 && velocity.y > (-JumpHeight * 0.80)):
 		velocity.y += 8 * gravity * delta;
-	velocity.y += gravity * delta;
 
 func execute_animation_update():
+	if (is_dead()): return;
 	var LEFT = Input.is_action_pressed("move_left");
 	var RIGHT = Input.is_action_pressed("move_right");
 	var ATTACK = Input.is_action_just_pressed("attack");
@@ -72,8 +76,20 @@ func execute_collision_triggers():
 			self.damage(col.collider);
 
 func damage(_source):
-	$DamageAnimation.play("take damage");
-	self.velocity.y = -20;
+	if $DamageAnimation.is_playing(): return;
+	if (is_dead()): return;
+	self.CurrentHp -= 1;
+	if (self.CurrentHp <= 0):
+		$Animation.play("die_" + facing);
+	else:
+		$DamageAnimation.play("take damage");
+		self.velocity.y = -20;
 
 func is_attacking():
 	return $Animation.is_playing() && ($Animation.current_animation == "attack_right" || $Animation.current_animation == "attack_left");
+
+func is_dead():
+	return self.CurrentHp <= 0;
+
+func restart_level():
+	pass;

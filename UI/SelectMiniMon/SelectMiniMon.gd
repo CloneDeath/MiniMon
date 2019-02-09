@@ -6,6 +6,5 @@ var level01_scene = preload("res://Levels/Level01.tscn");
 func minimon_selected(minimon: PackedScene):
 	var player = minimon.instance();
 	var level01 = level01_scene.instance();
-	level01.get_node("LevelSpawn").add_child(player);
-	level01.get_node("Camera").target = player;
+	level01.add_player(player);
 	emit_signal("load_scene", level01);

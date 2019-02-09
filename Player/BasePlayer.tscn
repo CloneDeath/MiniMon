@@ -1,8 +1,9 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://Player/BasePlayer.gd" type="Script" id=1]
 [ext_resource path="res://Player/MiniMon/Plantasaur/Plantasaur.png" type="Texture" id=2]
 [ext_resource path="res://Player/PlayerDamage.ogg" type="AudioStream" id=3]
+[ext_resource path="res://Player/Death.ogg" type="AudioStream" id=4]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -70,7 +71,8 @@ tracks/1/keys = {
 
 [sub_resource type="Animation" id=4]
 
-loop = true
+resource_name = "die_left"
+step = 0.2
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:scale")
 tracks/0/interp = 1
@@ -90,15 +92,42 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0, 0.5 ),
-"transitions": PoolRealArray( 1, 1 ),
+"times": PoolRealArray( 0, 0.2, 0.4 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
 "update": 1,
-"values": [ 0, 1 ]
+"values": [ 8, 9, 10 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("DeathAudio:playing")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/3/type = "method"
+tracks/3/path = NodePath(".")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 1 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "restart_level"
+} ]
 }
 
 [sub_resource type="Animation" id=5]
 
-loop = true
+resource_name = "die_right"
+step = 0.2
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:scale")
 tracks/0/interp = 1
@@ -118,10 +147,36 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0, 0.5 ),
-"transitions": PoolRealArray( 1, 1 ),
+"times": PoolRealArray( 0, 0.2, 0.4 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
 "update": 1,
-"values": [ 0, 1 ]
+"values": [ 8, 9, 10 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("DeathAudio:playing")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/3/type = "method"
+tracks/3/path = NodePath(".")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 1 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "restart_level"
+} ]
 }
 
 [sub_resource type="Animation" id=6]
@@ -146,10 +201,10 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
 "update": 1,
-"values": [ 7 ]
+"values": [ 0, 1 ]
 }
 
 [sub_resource type="Animation" id=7]
@@ -174,10 +229,10 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
 "update": 1,
-"values": [ 7 ]
+"values": [ 0, 1 ]
 }
 
 [sub_resource type="Animation" id=8]
@@ -205,7 +260,7 @@ tracks/1/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ 6 ]
+"values": [ 7 ]
 }
 
 [sub_resource type="Animation" id=9]
@@ -233,10 +288,66 @@ tracks/1/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ 6 ]
+"values": [ 7 ]
 }
 
 [sub_resource type="Animation" id=10]
+
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( -1, 1 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sprite:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 6 ]
+}
+
+[sub_resource type="Animation" id=11]
+
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sprite:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 6 ]
+}
+
+[sub_resource type="Animation" id=12]
 
 length = 0.8
 loop = true
@@ -265,7 +376,7 @@ tracks/1/keys = {
 "values": [ 2, 3, 4, 5, 2 ]
 }
 
-[sub_resource type="Animation" id=11]
+[sub_resource type="Animation" id=13]
 
 length = 0.8
 loop = true
@@ -294,7 +405,7 @@ tracks/1/keys = {
 "values": [ 2, 3, 4, 5, 2 ]
 }
 
-[sub_resource type="Animation" id=12]
+[sub_resource type="Animation" id=14]
 
 length = 0.4
 tracks/0/type = "value"
@@ -358,7 +469,6 @@ script = ExtResource( 1 )
 position = Vector2( 0, -4 )
 texture = ExtResource( 2 )
 hframes = 15
-frame = 14
 
 [node name="ProjectileSource" type="Position2D" parent="Sprite"]
 position = Vector2( 4.16657, 0.272012 )
@@ -370,18 +480,23 @@ shape = SubResource( 1 )
 [node name="Animation" type="AnimationPlayer" parent="."]
 anims/attack_left = SubResource( 2 )
 anims/attack_right = SubResource( 3 )
-anims/idle_left = SubResource( 4 )
-anims/idle_right = SubResource( 5 )
-anims/jump_down_left = SubResource( 6 )
-anims/jump_down_right = SubResource( 7 )
-anims/jump_up_left = SubResource( 8 )
-anims/jump_up_right = SubResource( 9 )
-anims/walk_left = SubResource( 10 )
-anims/walk_right = SubResource( 11 )
+anims/die_left = SubResource( 4 )
+anims/die_right = SubResource( 5 )
+anims/idle_left = SubResource( 6 )
+anims/idle_right = SubResource( 7 )
+anims/jump_down_left = SubResource( 8 )
+anims/jump_down_right = SubResource( 9 )
+anims/jump_up_left = SubResource( 10 )
+anims/jump_up_right = SubResource( 11 )
+anims/walk_left = SubResource( 12 )
+anims/walk_right = SubResource( 13 )
 
 [node name="HurtAudio" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 3 )
 
+[node name="DeathAudio" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 4 )
+
 [node name="DamageAnimation" type="AnimationPlayer" parent="."]
-"anims/take damage" = SubResource( 12 )
+"anims/take damage" = SubResource( 14 )
 

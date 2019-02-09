@@ -1,13 +1,9 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Levels/Terrain/Terrain.tres" type="TileSet" id=1]
 [ext_resource path="res://Levels/BaseLevel.gd" type="Script" id=2]
-[ext_resource path="res://Levels/FollowCamera.gd" type="Script" id=3]
-[ext_resource path="res://NeekoFont.ttf" type="DynamicFontData" id=4]
-
-[sub_resource type="DynamicFont" id=1]
-
-font_data = ExtResource( 4 )
+[ext_resource path="res://Player/Health/Health.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Levels/FollowCamera.gd" type="Script" id=4]
 
 [node name="BaseLevel" type="TileMap"]
 tile_set = ExtResource( 1 )
@@ -15,20 +11,21 @@ cell_size = Vector2( 6, 6 )
 format = 1
 script = ExtResource( 2 )
 
+[node name="GUI" type="CanvasLayer" parent="."]
+
+[node name="Health" parent="GUI" instance=ExtResource( 3 )]
+position = Vector2( 1, 1 )
+Max = 3
+
 [node name="LevelSpawn" type="Position2D" parent="."]
 
 [node name="Camera" type="Camera2D" parent="."]
 current = true
 drag_margin_h_enabled = false
 drag_margin_v_enabled = false
-script = ExtResource( 3 )
-
-[node name="Label" type="Label" parent="Camera"]
-visible = false
-margin_left = -54.2245
-margin_top = -3.1631
-margin_right = -8.22453
-margin_bottom = 10.8369
-custom_fonts/font = SubResource( 1 )
-text = "HP 39/39"
+drag_margin_left = 1.0
+drag_margin_top = 1.0
+drag_margin_right = 1.0
+drag_margin_bottom = 1.0
+script = ExtResource( 4 )
 
