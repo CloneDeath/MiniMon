@@ -13,7 +13,7 @@ func _process(_delta):
 func _physics_process(delta):
 	velocity.y += gravity * delta;
 	velocity.x = speed;
-	velocity = self.move_and_slide(velocity, Vector2(0, -2));
+	velocity = self.move_and_slide(velocity, Vector2(0, -1));
 	if (self.is_on_wall()):
 		speed *= -1;
 		velocity.y = -20;

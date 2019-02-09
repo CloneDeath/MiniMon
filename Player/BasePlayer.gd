@@ -3,10 +3,15 @@ extends KinematicBody2D
 export(PackedScene) var Projectile;
 export var Speed = 20;
 export var JumpHeight = 75;
+export var MaxHp = 39;
+var hp = 39;
 var gravity = 128;
 var velocity = Vector2(0, 0);
 var facing = "right";
 var action = "idle";
+
+func _ready():
+	hp = MaxHp;
 
 func _physics_process(delta):
 	execute_velocity_update(delta);
@@ -66,7 +71,7 @@ func execute_collision_triggers():
 		if (col.collider.is_in_group("enemy")):
 			self.damage(col.collider);
 
-func damage(source):
+func damage(_source):
 	$DamageAnimation.play("take damage");
 	self.velocity.y = -20;
 
