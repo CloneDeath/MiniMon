@@ -10,8 +10,9 @@ func _ready():
 	if (grass_type == -1):
 		self.visible = false;
 		return;
-	self.frame = grass_type - 1;
-	self.position.x += randi() % (max_width - (grass_type - 1));
+	self.frame = grass_type;
+	if (grass_type < 6):
+		self.position.x += randi() % (max_width - (grass_type));
 
 func get_grass_type():
 	var roll = randi() % 3;
