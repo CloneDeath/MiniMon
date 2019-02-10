@@ -44,5 +44,5 @@ func give_xp(amount):
 	for player in get_tree().get_nodes_in_group("player"):
 		player.call_deferred("give_xp", amount);
 
-func _on_PlayerDetection_body_entered(body):
+func _on_PlayerDetection_body_entered(_body):
 	Enabled = true;

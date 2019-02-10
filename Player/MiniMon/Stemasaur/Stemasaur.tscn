@@ -13,6 +13,7 @@ extents = Vector2( 4, 2 )
 Projectile = ExtResource( 2 )
 MiniVolution = ExtResource( 3 )
 MaxHp = 4
+Damage = 2
 
 [node name="Sprite" parent="." index="0"]
 texture = ExtResource( 4 )

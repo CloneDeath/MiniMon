@@ -1,7 +1,7 @@
 extends Node2D
 
 signal load_scene(node);
-var level01_scene = preload("res://Levels/Level01.tscn");
+var level01_scene = preload("res://Levels/Level02.tscn");
 
 func minimon_selected(minimon: PackedScene):
 	var player = minimon.instance();

@@ -9,6 +9,7 @@ export(int) var XpNeeded = 5;
 export var Speed = 20;
 export var JumpHeight = 75;
 export var MaxHp = 3;
+export var Damage = 1;
 var CurrentHp = 3;
 var gravity = 128;
 var velocity = Vector2(0, 0);
@@ -34,6 +35,7 @@ func execute_attack_update():
 		var bullet = Projectile.instance();
 		bullet.facing = 1 if self.facing == "right" else -1;
 		bullet.source = self;
+		bullet.damage = self.Damage;
 		self.get_parent().add_child(bullet);
 		bullet.global_position = $Sprite/ProjectileSource.global_position;
 

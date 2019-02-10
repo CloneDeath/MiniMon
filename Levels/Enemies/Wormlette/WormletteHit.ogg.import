@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/WormletteHit.ogg-4f4f6c705f07f2c0665ddfcdccab3f5e.oggstr"
+
+[deps]
+
+source_file="res://Levels/Enemies/Wormlette/WormletteHit.ogg"
+dest_files=[ "res://.import/WormletteHit.ogg-4f4f6c705f07f2c0665ddfcdccab3f5e.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

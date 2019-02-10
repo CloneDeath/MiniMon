@@ -49,7 +49,7 @@ func damage(source):
 	if ($AnimationPlayer.current_animation == "hurt" || hp <= 0):
 		return;
 
-	hp -= 1;
+	hp -= source.damage;
 
 	if (hp <= 0):
 		$DamageAnimation.play("death");

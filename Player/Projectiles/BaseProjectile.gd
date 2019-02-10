@@ -2,6 +2,7 @@ extends Area2D
 
 export var speed = 64;
 export var life = 0.75;
+export var damage = 1;
 
 var facing = 1;
 var source: Node = null;

@@ -3,7 +3,7 @@ extends Area2D
 signal next_level();
 var enabled = true;
 
-func _process(delta):
+func _process(_delta):
 	if (!enabled): return;
 	for body in get_overlapping_bodies():
 		if (body.is_in_group("player")):
