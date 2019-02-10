@@ -8,11 +8,17 @@ var hp = 10;
 var target = null;
 
 func activate():
+	if (target != null):
+		if (target.global_position.x > self.global_position.x):
+			$Sprite.scale.x = -1;
+		else:
+			$Sprite.scale.x = 1;
 	$Animation.play("attack");
 
 func shoot():
 	var projectile = projectile_scene.instance();
 	add_child(projectile);
+	projectile.velocity.x *= -$Sprite.scale.x;
 	projectile.global_position = $Sprite/RockHole.global_position;
 
 func is_attacking():

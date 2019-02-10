@@ -1,6 +1,6 @@
 extends Node2D
 
-export var cooldown = 3;
+export var cooldown = 1;
 export var hp = 10;
 var target = null;
 
