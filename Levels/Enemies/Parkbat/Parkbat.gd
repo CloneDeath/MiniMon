@@ -1,4 +1,7 @@
 extends KinematicBody2D
+
+export(bool) var sleeping = false;
+
 var velocity = Vector2(1, 0);
 var target = Vector2();
 var speed = 24;
@@ -10,7 +13,15 @@ func _ready():
 
 func _process(delta):
 	update_target();
-	move_towards_target(delta);
+	if (sleeping):
+		play_animation("hanging");
+	else:
+		play_animation("idle");
+		move_towards_target(delta);
+
+func play_animation(anim):
+	if ($AnimationPlayer.current_animation == anim): return;
+	$AnimationPlayer.play(anim);
 
 func move_towards_target(delta):
 	var desired = (self.target - self.position).normalized();
@@ -32,6 +43,7 @@ func _on_PlayerDetection_body_entered(body):
 func make_target_if_player(body):
 	if (body.is_in_group("player")):
 		self.target = body.position;
+		sleeping = false;
 
 func damage(source):
 	if ($AnimationPlayer.current_animation == "hurt" || hp <= 0):

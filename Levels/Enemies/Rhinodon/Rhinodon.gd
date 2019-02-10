@@ -1,5 +1,6 @@
 extends KinematicBody2D
 
+export var Enabled = false;
 var speed = -32;
 var velocity = Vector2(0, 0);
 var gravity = 128;
@@ -11,6 +12,7 @@ func _process(_delta):
 		$Sprite.scale = Vector2(-1, 1);
 
 func _physics_process(delta):
+	if (!Enabled): return;
 	velocity.y += gravity * delta;
 	velocity.x = speed;
 	velocity = self.move_and_slide(velocity, Vector2(0, -1));
@@ -41,3 +43,6 @@ func damage(source):
 func give_xp(amount):
 	for player in get_tree().get_nodes_in_group("player"):
 		player.call_deferred("give_xp", amount);
+
+func _on_PlayerDetection_body_entered(body):
+	Enabled = true;
