@@ -1,9 +1,9 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Player/BasePlayer.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Player/Projectiles/Sharpleaf/Sharpleaf.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Player/MiniMon/Stemasaur/Stemasaur.png" type="Texture" id=3]
-
+[ext_resource path="res://Player/MiniMon/Vineasaur/Vineasaur.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Player/MiniMon/Stemasaur/Stemasaur.png" type="Texture" id=4]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -11,9 +11,11 @@ extents = Vector2( 4, 2 )
 
 [node name="Stemasaur" index="0" instance=ExtResource( 1 )]
 Projectile = ExtResource( 2 )
+MiniVolution = ExtResource( 3 )
+MaxHp = 4
 
 [node name="Sprite" parent="." index="0"]
-texture = ExtResource( 3 )
+texture = ExtResource( 4 )
 
 [node name="CollisionShape2D" parent="." index="1"]
 shape = SubResource( 1 )

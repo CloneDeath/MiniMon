@@ -8,9 +8,6 @@
 [ext_resource path="res://Player/MiniMon/Plantasaur/Plantasaur.png" type="Texture" id=6]
 [ext_resource path="res://Player/MiniMon/Plantasaur/Plantasaur.tscn" type="PackedScene" id=7]
 
-
-
-
 [sub_resource type="Animation" id=1]
 
 resource_name = "idle"
@@ -28,13 +25,12 @@ tracks/0/keys = {
 "values": [ 0, 1 ]
 }
 
-[sub_resource type="RectangleShape2D" id=3]
+[sub_resource type="RectangleShape2D" id=2]
 
 extents = Vector2( 27, 6 )
 
-[sub_resource type="Animation" id=2]
+[sub_resource type="Animation" id=3]
 
-resource_name = "idle"
 loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:frame")
@@ -83,7 +79,7 @@ editor/display_folded = false
 
 [node name="CollisionShape2D" parent="Burnmander/Area2D" index="0"]
 position = Vector2( 0, 4 )
-shape = SubResource( 3 )
+shape = SubResource( 2 )
 
 [node name="Plantasaur" parent="." instance=ExtResource( 2 )]
 editor/display_folded = true
@@ -92,7 +88,7 @@ texture = ExtResource( 6 )
 minimon = ExtResource( 7 )
 
 [node name="Animation" parent="Plantasaur" index="0"]
-anims/idle = SubResource( 2 )
+anims/idle = SubResource( 3 )
 
 [node name="Label" parent="Plantasaur" index="1"]
 margin_left = -25.0

@@ -19,6 +19,8 @@ func move_towards_target(delta):
 	var collision = self.move_and_collide(velocity * speed * delta * speed_multiplier);
 	if (collision):
 		velocity = velocity.bounce(collision.normal);
+		if (collision.collider.is_in_group("player")):
+			collision.collider.damage(self);
 
 func update_target():
 	for body in $PlayerDetection.get_overlapping_bodies():
@@ -39,9 +41,14 @@ func damage(source):
 
 	if (hp <= 0):
 		$DamageAnimation.play("death");
+		give_xp(3);
 	else:
 		$DamageAnimation.play("hurt");
 	self.velocity = -(source.position - self.position).normalized();
+
+func give_xp(amount):
+	for player in get_tree().get_nodes_in_group("player"):
+		player.call_deferred("give_xp", amount);
 
 func scale_speed(multiplier):
 	self.speed_multiplier = multiplier;

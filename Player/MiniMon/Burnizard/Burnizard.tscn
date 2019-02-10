@@ -8,8 +8,9 @@
 
 extents = Vector2( 2.5, 3.5 )
 
-[node name="Burnizard" instance=ExtResource( 1 )]
+[node name="Burnizard" index="0" instance=ExtResource( 1 )]
 Projectile = ExtResource( 2 )
+MaxHp = 5
 
 [node name="Sprite" parent="." index="0"]
 texture = ExtResource( 3 )

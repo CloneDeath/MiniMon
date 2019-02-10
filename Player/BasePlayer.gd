@@ -1,8 +1,11 @@
 extends KinematicBody2D
 
 signal restart_level();
+signal replace_player(new_player);
 
 export(PackedScene) var Projectile;
+export(PackedScene) var MiniVolution;
+export(int) var XpNeeded = 5;
 export var Speed = 20;
 export var JumpHeight = 75;
 export var MaxHp = 3;
@@ -11,6 +14,7 @@ var gravity = 128;
 var velocity = Vector2(0, 0);
 var facing = "right";
 var action = "idle";
+var Xp = 0;
 
 func _ready():
 	CurrentHp = MaxHp;
@@ -96,3 +100,9 @@ func is_dead():
 
 func restart_level():
 	emit_signal("restart_level");
+
+func give_xp(amount):
+	Xp += amount;
+	if (Xp >= XpNeeded && MiniVolution != null):
+		var next = MiniVolution.instance();
+		emit_signal("replace_player", next);

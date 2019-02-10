@@ -36,3 +36,8 @@ func damage(source):
 	self.collision_layer = 0;
 	self.collision_mask = 0;
 	$AnimationPlayer.play("hurt");
+	give_xp(2);
+
+func give_xp(amount):
+	for player in get_tree().get_nodes_in_group("player"):
+		player.call_deferred("give_xp", amount);
