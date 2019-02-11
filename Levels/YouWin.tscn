@@ -1,25 +1,86 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=12 format=2]
 
-[ext_resource path="res://NeekoFont.ttf" type="DynamicFontData" id=1]
-[ext_resource path="res://Levels/Enemies/Parkbat/Parkbat.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Levels/Enemies/Rhinodon/Rhinodon.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Levels/Enemies/Wormlette/Wormlette.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Levels/YouWin.gd" type="Script" id=1]
+[ext_resource path="res://NeekoFont.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://Levels/Enemies/Parkbat/Parkbat.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Levels/Enemies/Rhinodon/Rhinodon.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Levels/Enemies/Wormlette/Wormlette.tscn" type="PackedScene" id=5]
+[ext_resource path="res://UI/Patreon.png" type="Texture" id=6]
 
 [sub_resource type="DynamicFont" id=1]
 
-font_data = ExtResource( 1 )
+font_data = ExtResource( 2 )
 
 [sub_resource type="DynamicFont" id=2]
 
 size = 32
-font_data = ExtResource( 1 )
+font_data = ExtResource( 2 )
 
 [sub_resource type="DynamicFont" id=3]
 
-font_data = ExtResource( 1 )
+font_data = ExtResource( 2 )
 
-[node name="Node2D" type="Node2D"]
-editor/display_folded = true
+[sub_resource type="DynamicFont" id=4]
+
+font_data = ExtResource( 2 )
+
+[sub_resource type="Animation" id=5]
+
+resource_name = "idle"
+length = 6.0
+loop = true
+step = 1.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("Parkbat:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, true ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Rhinodon:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Wormlette:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Patreon:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+
+[node name="YouWin" type="Node2D"]
+script = ExtResource( 1 )
 
 [node name="Congratulations" type="Label" parent="."]
 margin_left = -12.8783
@@ -33,15 +94,15 @@ align = 1
 
 [node name="You Win" type="Label" parent="."]
 margin_left = -7.22993
-margin_top = 16.2673
+margin_top = 12.2673
 margin_right = 124.77
-margin_bottom = 75.2673
+margin_bottom = 71.2673
 custom_fonts/font = SubResource( 2 )
 custom_colors/font_color = Color( 0.607843, 0.737255, 0.0588235, 1 )
 text = "You Win!"
 align = 1
 
-[node name="Parkbat" parent="." instance=ExtResource( 2 )]
+[node name="Parkbat" parent="." instance=ExtResource( 3 )]
 editor/display_folded = true
 position = Vector2( 15.7695, 4.04753 )
 sleeping = true
@@ -56,9 +117,9 @@ custom_colors/font_color = Color( 0.188235, 0.384314, 0.188235, 1 )
 text = "Parkbat"
 align = 1
 
-[node name="Rhinodon" parent="." instance=ExtResource( 3 )]
+[node name="Rhinodon" parent="." instance=ExtResource( 4 )]
 editor/display_folded = true
-position = Vector2( 90, 60 )
+position = Vector2( 93, 60 )
 
 [node name="RhinodonLabel" type="Label" parent="Rhinodon"]
 margin_left = -19.0388
@@ -70,8 +131,9 @@ custom_colors/font_color = Color( 0.188235, 0.384314, 0.188235, 1 )
 text = "Rhinodon"
 align = 1
 
-[node name="Wormlette" parent="." instance=ExtResource( 4 )]
+[node name="Wormlette" parent="." instance=ExtResource( 5 )]
 editor/display_folded = true
+visible = false
 position = Vector2( 18, 57.5 )
 
 [node name="WormletteLabel" type="Label" parent="Wormlette"]
@@ -84,3 +146,23 @@ custom_colors/font_color = Color( 0.188235, 0.384314, 0.188235, 1 )
 text = "Wormlette"
 align = 1
 
+[node name="Patreon" type="LinkButton" parent="."]
+margin_left = 1.36362
+margin_top = 48.8743
+margin_right = 112.364
+margin_bottom = 62.8743
+custom_fonts/font = SubResource( 4 )
+custom_colors/font_color = Color( 0.545098, 0.67451, 0.0588235, 1 )
+custom_colors/font_color_hover = Color( 0.607843, 0.737255, 0.0588235, 1 )
+custom_colors/font_color_pressed = Color( 0.188235, 0.384314, 0.188235, 1 )
+text = "Support me on Patreon"
+
+[node name="Sprite" type="Sprite" parent="Patreon"]
+position = Vector2( 51.2874, -4.57354 )
+texture = ExtResource( 6 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "idle"
+anims/idle = SubResource( 5 )
+
+[connection signal="pressed" from="Patreon" to="." method="_on_Patreon_pressed"]

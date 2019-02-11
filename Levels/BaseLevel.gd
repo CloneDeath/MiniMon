@@ -37,8 +37,8 @@ func restart_level():
 	player.position = Vector2(0, 0);
 	player.facing = "right";
 	next.add_player(player);
-	emit_signal("load_scene", next);
 	queue_free();
+	emit_signal("load_scene", next);
 
 func replace_player(new_player):
 	self.add_child(new_player);

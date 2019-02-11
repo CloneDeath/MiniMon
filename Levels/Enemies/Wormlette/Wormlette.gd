@@ -1,6 +1,7 @@
 extends KinematicBody2D
 
 signal is_damaged(amount);
+signal is_dead();
 
 var projectile_scene = preload("res://Levels/Enemies/Wormlette/Rock.tscn");
 
@@ -32,3 +33,6 @@ func damage(source):
 	else:
 		$Damage.play("hit");
 		emit_signal("is_damaged", source.damage);
+
+func emit_death():
+	emit_signal("is_dead");
