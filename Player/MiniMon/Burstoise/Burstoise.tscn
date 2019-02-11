@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Player/BasePlayer.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Player/Projectiles/Squirt/Squirt.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Player/MiniMon/Burstoise/Burstoise.png" type="Texture" id=3]
+[ext_resource path="res://Player/LevelUpAnimation.tscn" type="PackedScene" id=4]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -10,6 +11,7 @@ extents = Vector2( 3, 3.5 )
 
 [node name="Burstoise" index="0" instance=ExtResource( 1 )]
 Projectile = ExtResource( 2 )
+MinimonName = "Burstoise"
 MaxHp = 5
 Damage = 3
 
@@ -22,4 +24,9 @@ position = Vector2( 4.5513, -1.42078 )
 [node name="CollisionShape2D" parent="." index="1"]
 position = Vector2( 0, -3.5 )
 shape = SubResource( 1 )
+
+[node name="DamageAnimation" parent="." index="3"]
+editor/display_folded = true
+
+[node name="LevelUpAnimation" parent="." index="4" instance=ExtResource( 4 )]
 

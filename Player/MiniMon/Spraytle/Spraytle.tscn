@@ -12,6 +12,7 @@ extents = Vector2( 2, 3 )
 [node name="Spraytle" index="0" instance=ExtResource( 1 )]
 Projectile = ExtResource( 2 )
 MiniVolution = ExtResource( 3 )
+MinimonName = "Spraytle"
 
 [node name="Sprite" parent="." index="0"]
 texture = ExtResource( 4 )

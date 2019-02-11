@@ -1,0 +1,86 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://NeekoFont.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://Levels/Enemies/Parkbat/Parkbat.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Levels/Enemies/Rhinodon/Rhinodon.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Levels/Enemies/Wormlette/Wormlette.tscn" type="PackedScene" id=4]
+
+[sub_resource type="DynamicFont" id=1]
+
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=2]
+
+size = 32
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=3]
+
+font_data = ExtResource( 1 )
+
+[node name="Node2D" type="Node2D"]
+editor/display_folded = true
+
+[node name="Congratulations" type="Label" parent="."]
+margin_left = -12.8783
+margin_top = 7.90774
+margin_right = 129.122
+margin_bottom = 66.9077
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0.607843, 0.737255, 0.0588235, 1 )
+text = "Congratulations"
+align = 1
+
+[node name="You Win" type="Label" parent="."]
+margin_left = -7.22993
+margin_top = 16.2673
+margin_right = 124.77
+margin_bottom = 75.2673
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 0.607843, 0.737255, 0.0588235, 1 )
+text = "You Win!"
+align = 1
+
+[node name="Parkbat" parent="." instance=ExtResource( 2 )]
+editor/display_folded = true
+position = Vector2( 15.7695, 4.04753 )
+sleeping = true
+
+[node name="ParkbatLabel" type="Label" parent="Parkbat"]
+margin_left = 4.1302
+margin_top = -7.21062
+margin_right = 43.1302
+margin_bottom = 6.78938
+custom_fonts/font = SubResource( 3 )
+custom_colors/font_color = Color( 0.188235, 0.384314, 0.188235, 1 )
+text = "Parkbat"
+align = 1
+
+[node name="Rhinodon" parent="." instance=ExtResource( 3 )]
+editor/display_folded = true
+position = Vector2( 90, 60 )
+
+[node name="RhinodonLabel" type="Label" parent="Rhinodon"]
+margin_left = -19.0388
+margin_top = -16.6204
+margin_right = 19.9612
+margin_bottom = -2.62037
+custom_fonts/font = SubResource( 3 )
+custom_colors/font_color = Color( 0.188235, 0.384314, 0.188235, 1 )
+text = "Rhinodon"
+align = 1
+
+[node name="Wormlette" parent="." instance=ExtResource( 4 )]
+editor/display_folded = true
+position = Vector2( 18, 57.5 )
+
+[node name="WormletteLabel" type="Label" parent="Wormlette"]
+margin_left = -17.0788
+margin_top = -15.9278
+margin_right = 29.9212
+margin_bottom = -1.92785
+custom_fonts/font = SubResource( 3 )
+custom_colors/font_color = Color( 0.188235, 0.384314, 0.188235, 1 )
+text = "Wormlette"
+align = 1
+

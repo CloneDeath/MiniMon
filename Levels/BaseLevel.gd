@@ -35,6 +35,7 @@ func restart_level():
 	player.get_parent().remove_child(player);
 	player.CurrentHp = player.MaxHp;
 	player.position = Vector2(0, 0);
+	player.facing = "right";
 	next.add_player(player);
 	emit_signal("load_scene", next);
 	queue_free();
@@ -43,6 +44,7 @@ func replace_player(new_player):
 	self.add_child(new_player);
 	new_player.position = player.position;
 	new_player.velocity = player.velocity;
+	new_player.facing = player.facing;
 	$Camera.target = new_player;
 	player.queue_free();
 	player = new_player;
@@ -52,3 +54,4 @@ func replace_player(new_player):
 func _process(_delta):
 	$GUI/Health.Max = player.MaxHp;
 	$GUI/Health.Current = player.CurrentHp;
+	$GUI/Name.text = player.MinimonName;

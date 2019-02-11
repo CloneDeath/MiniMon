@@ -5,7 +5,7 @@ signal is_damaged(amount);
 var projectile_scene = preload("res://Levels/Enemies/Wormlette/Rock.tscn");
 
 var hp = 10;
-var target = null;
+var target:Node = null;
 
 func activate():
 	if (target != null):

@@ -5,6 +5,8 @@ signal replace_player(new_player);
 
 export(PackedScene) var Projectile;
 export(PackedScene) var MiniVolution;
+#warning-ignore:unused_class_variable
+export(String) var MinimonName = "Minimon";
 export(int) var XpNeeded = 5;
 export var Speed = 20;
 export var JumpHeight = 75;
