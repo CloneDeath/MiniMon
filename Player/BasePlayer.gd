@@ -35,7 +35,7 @@ func execute_attack_update():
 	var ATTACK = Input.is_action_just_pressed("attack");
 	if (ATTACK && Projectile != null):
 		var bullet = Projectile.instance();
-		bullet.facing = 1 if self.facing == "right" else -1;
+		bullet.velocity.x *= 1 if self.facing == "right" else -1;
 		bullet.source = self;
 		bullet.damage = self.Damage;
 		self.get_parent().add_child(bullet);

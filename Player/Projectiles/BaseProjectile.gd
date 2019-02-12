@@ -1,17 +1,17 @@
 extends Area2D
 
-export var speed = 64;
 export var life = 0.75;
 #warning-ignore:unused_class_variable
 export var damage = 1;
 
-var facing = 1;
+var velocity = Vector2(64, 0);
+
 var source: Node = null;
 var splash_scene = load("res://Player/Projectiles/Splash.tscn");
 
 func _physics_process(delta):
-	self.position.x += speed * facing * delta;
-	$Sprite.scale.x = facing;
+	self.position += velocity * delta;
+	$Sprite.scale.x = sign(velocity.x);
 	life -= delta;
 	if (life <= 0):
 		queue_free();

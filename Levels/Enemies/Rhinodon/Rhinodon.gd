@@ -27,9 +27,18 @@ func execute_collision_triggers():
 		if (col.collider.is_in_group("player")):
 			col.collider.damage(self);
 
+func spawn_deflection(source):
+	var bounce = source.duplicate(DUPLICATE_SCRIPTS);
+	bounce.velocity.x = -source.velocity.x / 2;
+	bounce.velocity.y = -abs(source.velocity.x / 2);
+	bounce.life = 0.3;
+	bounce.source = self;
+	get_parent().add_child(bounce);
+
 func damage(source):
-	if (sign(speed) != sign(source.facing)):
+	if (sign(speed) != sign(source.velocity.x)):
 		$DeflectSound.play();
+		self.call_deferred("spawn_deflection", source);
 		return;
 	if ($AnimationPlayer.current_animation == "hurt"):
 		return;
