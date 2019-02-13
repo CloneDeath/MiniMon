@@ -1,11 +1,15 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://Levels/YouWin.gd" type="Script" id=1]
 [ext_resource path="res://NeekoFont.ttf" type="DynamicFontData" id=2]
 [ext_resource path="res://Levels/Enemies/Parkbat/Parkbat.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Levels/Enemies/Rhinodon/Rhinodon.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Levels/Enemies/Wormlette/Wormlette.tscn" type="PackedScene" id=5]
-[ext_resource path="res://UI/Patreon.png" type="Texture" id=6]
+[ext_resource path="res://Levels/Terrain/Dirt/Dirt.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Levels/Terrain/Grass/Grass.png" type="Texture" id=6]
+[ext_resource path="res://Levels/Terrain/Grass/Grass_Right.png" type="Texture" id=7]
+[ext_resource path="res://Levels/Terrain/Grass/Grass_Left.png" type="Texture" id=8]
+[ext_resource path="res://Levels/Enemies/Wormlette/Wormlette.tscn" type="PackedScene" id=9]
+[ext_resource path="res://UI/Patreon.png" type="Texture" id=10]
 
 [sub_resource type="DynamicFont" id=1]
 
@@ -43,7 +47,7 @@ tracks/0/keys = {
 "values": [ true, true ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("Rhinodon:visible")
+tracks/1/path = NodePath("RhinodonArea:visible")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -117,23 +121,37 @@ custom_colors/font_color = Color( 0.188235, 0.384314, 0.188235, 1 )
 text = "Parkbat"
 align = 1
 
-[node name="Rhinodon" parent="." instance=ExtResource( 4 )]
+[node name="RhinodonArea" type="Node2D" parent="."]
 editor/display_folded = true
-position = Vector2( 93, 60 )
+position = Vector2( 0, -3.16309 )
 
-[node name="RhinodonLabel" type="Label" parent="Rhinodon"]
-margin_left = -19.0388
-margin_top = -16.6204
-margin_right = 19.9612
-margin_bottom = -2.62037
+[node name="RhinodonLabel" type="Label" parent="RhinodonArea"]
+margin_left = 73.9612
+margin_top = 43.3796
+margin_right = 112.961
+margin_bottom = 57.3796
 custom_fonts/font = SubResource( 3 )
 custom_colors/font_color = Color( 0.188235, 0.384314, 0.188235, 1 )
 text = "Rhinodon"
 align = 1
 
-[node name="Wormlette" parent="." instance=ExtResource( 5 )]
+[node name="Rhinodon" parent="RhinodonArea" instance=ExtResource( 4 )]
+position = Vector2( 93, 60 )
+
+[node name="Dirt" parent="RhinodonArea" instance=ExtResource( 5 )]
+position = Vector2( 93, 62.8743 )
+texture = ExtResource( 6 )
+
+[node name="Dirt2" parent="RhinodonArea" instance=ExtResource( 5 )]
+position = Vector2( 99, 62.874 )
+texture = ExtResource( 7 )
+
+[node name="Dirt3" parent="RhinodonArea" instance=ExtResource( 5 )]
+position = Vector2( 87, 62.874 )
+texture = ExtResource( 8 )
+
+[node name="Wormlette" parent="." instance=ExtResource( 9 )]
 editor/display_folded = true
-visible = false
 position = Vector2( 18, 57.5 )
 
 [node name="WormletteLabel" type="Label" parent="Wormlette"]
@@ -159,7 +177,7 @@ text = "Support me on Patreon"
 
 [node name="Sprite" type="Sprite" parent="Patreon"]
 position = Vector2( 51.2874, -4.57354 )
-texture = ExtResource( 6 )
+texture = ExtResource( 10 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 autoplay = "idle"

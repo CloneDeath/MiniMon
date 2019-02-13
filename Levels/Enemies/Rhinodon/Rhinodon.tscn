@@ -1,11 +1,11 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Levels/Enemies/Rhinodon/Rhinodon.gd" type="Script" id=1]
 [ext_resource path="res://Levels/Enemies/Rhinodon/Rhinodon.png" type="Texture" id=2]
 [ext_resource path="res://Levels/Enemies/Rhinodon/Deflect.ogg" type="AudioStream" id=3]
 [ext_resource path="res://Levels/Enemies/Rhinodon/Hurt.ogg" type="AudioStream" id=4]
 
-[sub_resource type="Animation" id=5]
+[sub_resource type="Animation" id=1]
 
 resource_name = "hurt"
 length = 2.0
@@ -48,7 +48,7 @@ tracks/2/keys = {
 } ]
 }
 
-[sub_resource type="Animation" id=6]
+[sub_resource type="Animation" id=2]
 
 loop = true
 tracks/0/type = "value"
@@ -64,11 +64,29 @@ tracks/0/keys = {
 "values": [ 0, 1 ]
 }
 
-[sub_resource type="RectangleShape2D" id=3]
+[sub_resource type="Animation" id=3]
+
+resource_name = "sit"
+length = 0.1
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 0 ]
+}
+
+[sub_resource type="RectangleShape2D" id=4]
 
 extents = Vector2( 4, 2.5 )
 
-[sub_resource type="RectangleShape2D" id=4]
+[sub_resource type="RectangleShape2D" id=5]
 
 extents = Vector2( 56, 32 )
 
@@ -85,14 +103,15 @@ texture = ExtResource( 2 )
 hframes = 2
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-autoplay = "run"
+autoplay = "sit"
 playback_speed = 5.0
-anims/hurt = SubResource( 5 )
-anims/run = SubResource( 6 )
+anims/hurt = SubResource( 1 )
+anims/run = SubResource( 2 )
+anims/sit = SubResource( 3 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 0, -2.5 )
-shape = SubResource( 3 )
+shape = SubResource( 4 )
 
 [node name="DeflectSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 3 )
@@ -106,6 +125,6 @@ collision_mask = 8
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerDetection"]
 modulate = Color( 1, 0.341176, 0.341176, 0.596078 )
-shape = SubResource( 4 )
+shape = SubResource( 5 )
 
 [connection signal="body_entered" from="PlayerDetection" to="." method="_on_PlayerDetection_body_entered"]

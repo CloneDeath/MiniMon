@@ -1,7 +1,7 @@
 extends KinematicBody2D
 
 export var Enabled = false;
-var speed = -32;
+export var speed = -32;
 var velocity = Vector2(0, 0);
 var gravity = 128;
 
@@ -12,9 +12,9 @@ func _process(_delta):
 		$Sprite.scale = Vector2(-1, 1);
 
 func _physics_process(delta):
-	if (!Enabled): return;
 	velocity.y += gravity * delta;
-	velocity.x = speed;
+	if (Enabled):
+		velocity.x = speed;
 	velocity = self.move_and_slide(velocity, Vector2(0, -1));
 	if (self.is_on_wall()):
 		speed *= -1;
@@ -54,4 +54,5 @@ func give_xp(amount):
 		player.call_deferred("give_xp", amount);
 
 func _on_PlayerDetection_body_entered(_body):
+	$AnimationPlayer.play("run");
 	Enabled = true;
